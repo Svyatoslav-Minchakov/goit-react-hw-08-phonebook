@@ -46,10 +46,10 @@ export const InputForm = styled.input`
   font-family: Cambria;
   font-weight: 400;
   font-size: 18px;
-  outline: none;
-  border: 1px solid gray;
+  border: none;
+  outline: 1px solid gray;
   border-radius: 5px;
   &:focus {
-    border: 2px solid teal;
+    outline: 2px solid teal;
   }
 `;
