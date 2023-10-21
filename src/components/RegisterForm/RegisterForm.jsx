@@ -8,7 +8,7 @@ export const RegisterForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
-    
+
     dispatch(
       register({
         name: form.elements.name.value,
@@ -20,22 +20,40 @@ export const RegisterForm = () => {
   };
 
   return (
-      <Form onSubmit={handleSubmit}>
-        <SignUp>Sign up</SignUp>
+    <Form onSubmit={handleSubmit}>
+      <SignUp>Sign up</SignUp>
 
-        <Label>
-          Name
-          <Input type="text" name="name" placeholder="Username" autoComplete="off" />
-        </Label>
-        <Label>
-          Email
-          <Input type="email" name="email" placeholder="example@mail.com" autoComplete="off" />
-        </Label>
-        <Label>
-          Password
-          <Input type="password" name="password" placeholder="examplepwd12345" autoComplete="off" />
-        </Label>
-        <Button type="submit">Register</Button>
-        </Form>
+      <Label>
+        Name
+        <Input
+          type="text"
+          name="name"
+          placeholder="Username"
+          autoComplete="off"
+        />
+      </Label>
+      <Label>
+        Email
+        <Input
+          type="email"
+          name="email"
+          placeholder="example@mail.com"
+          autoComplete="off"
+          required
+        />
+      </Label>
+      <Label>
+        Password
+        <Input
+          type="password"
+          name="password"
+          placeholder="examplepwd12345"
+          autoComplete="off"
+          required
+          minLength={8}
+        />
+      </Label>
+      <Button type="submit">Register</Button>
+    </Form>
   );
 };

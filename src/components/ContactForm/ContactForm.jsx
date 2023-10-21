@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import shortid from 'shortid';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Form, Button, InputForm, LabelForm } from './ContactForm.styled';
 import { addContact } from '../../redux/Contact/operations';
 import { getContactsValue } from 'redux/Contact/selectors';
@@ -44,7 +46,18 @@ export const ContactForm = () => {
       user => user.name.toLocaleLowerCase() === name.toLowerCase()
     );
     if (userName) {
-      alert(`${name} is already in contacs`);
+      toast.error(`${name} is already in contacts`, {
+        autoClose: 2000,
+        position: 'top-center',
+        hideProgressBar: false,
+        className: 'custom-toast',
+        style: {
+          background: '#d5eff2',
+          color: '#333030',
+          border: '1px solid #aaadad',
+        },
+      });
+      reset();
     } else {
       addContactToState(createContact({ name, number }));
       reset();
