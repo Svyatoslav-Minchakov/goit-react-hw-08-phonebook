@@ -22,11 +22,23 @@ export const LoginForm = () => {
       <LogIn>Log in</LogIn>
       <Label>
         Email
-        <Input type="email" name="email" placeholder="example@mail.com" autoComplete="off" />
+        <Input
+          type="email"
+          name="email"
+          placeholder="example@mail.com"
+          autoComplete="off"
+          required
+        />
       </Label>
       <Label>
         Password
-        <Input type="password" name="password" placeholder="examplepwd12345" autoComplete="off" />
+        <Input
+          type="password"
+          name="password"
+          placeholder="examplepwd12345"
+          autoComplete="off"
+          required
+        />
       </Label>
       <Button type="submit">Log in</Button>
     </Form>
